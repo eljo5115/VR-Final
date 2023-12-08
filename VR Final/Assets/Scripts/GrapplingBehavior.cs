@@ -56,7 +56,6 @@ public class GrapplingBehavior : MonoBehaviour
         foreach (var inputDevice in inputDevices)
         {
             inputDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue);
-            inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryPressed);
             inputDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryPressed);
             if (triggerValue > 0.9f && !isGrappling)
             {
@@ -66,14 +65,8 @@ public class GrapplingBehavior : MonoBehaviour
             {
                 StopSwing();
             }
-            // if(primaryPressed)
-            // {
-            //     PersistJoint(joint);
-            // }
-            // if(secondaryPressed)
-            // {
-            //     RemovePersistJoint();
-            // }
+
+
         }
     }
     void LateUpdate()
@@ -97,7 +90,7 @@ public class GrapplingBehavior : MonoBehaviour
             joint.minDistance = distanceFromPoint * 0.25f;
 
             joint.spring = grappleForce;
-            joint.damper = 7f;
+            joint.damper = 12f;
             joint.massScale = 4.5f;
 
             lr.positionCount = 2;
@@ -114,17 +107,17 @@ public class GrapplingBehavior : MonoBehaviour
         lr.positionCount = 0;
         Destroy(joint);
     }
-    void PersistJoint(SpringJoint joint)
-    {
-        isGrappling = false;
-        persistJoints.Add(joint);
-        StopSwing();
-    }
-    void RemovePersistJoint()
-    {
-        Destroy(persistJoints[0]);
-        persistJoints.RemoveAt(0);
-    }
+    // void PersistJoint(SpringJoint joint)
+    // {
+    //     isGrappling = false;
+    //     persistJoints.Add(joint);
+    //     StopSwing();
+    // }
+    // void RemovePersistJoint()
+    // {
+    //     Destroy(persistJoints[0]);
+    //     persistJoints.RemoveAt(0);
+    // }
     void DrawRope()
     {
         if (!joint) return;

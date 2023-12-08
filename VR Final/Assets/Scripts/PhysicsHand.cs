@@ -43,6 +43,11 @@ public class PhysicsHand : MonoBehaviour
         if(isColliding)
         {
             HookesLaw();
+        }else
+        {
+            transform.position = target.position;
+            transform.rotation = target.rotation;
+
         }
     }
     void PIDMovement()
