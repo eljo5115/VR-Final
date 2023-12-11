@@ -27,11 +27,13 @@ public class ZombieEnemyController : MonoBehaviour
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange, inLightRange;
 
+    GameManager gameManager;
 
     void Awake()
     {
         player = GameObject.Find("VRWC_WheelchairRig/Camera Offset").transform;
         agent = GetComponent<NavMeshAgent>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
     void Update()
     {
@@ -45,6 +47,7 @@ public class ZombieEnemyController : MonoBehaviour
     }
     private void Patrolling()
     {
+        agent.speed = 1;
         if(!walkPointSet) SearchWalkPoint();
         if(walkPointSet)
         {
@@ -88,6 +91,7 @@ public class ZombieEnemyController : MonoBehaviour
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
+        agent.speed = 5;
     }
     public void RunAway()
     {
@@ -116,5 +120,12 @@ public class ZombieEnemyController : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position,sightRange);
 
+    }
+    void OnCollisionEnter(Collision other)
+    {
+        if(other.collider.gameObject.CompareTag("Player"))
+        {
+            gameManager.LoadMainMenu();
+        }
     }
 }

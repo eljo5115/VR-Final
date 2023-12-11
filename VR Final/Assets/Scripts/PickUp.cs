@@ -9,6 +9,7 @@ public class PickUp : MonoBehaviour
         if (other.collider.gameObject.layer == 8)
         {
             GameManager.collectibleCount++;
+            Destroy(gameObject);
         }
     }
 }
