@@ -43,6 +43,11 @@ public class GameManager : MonoBehaviour
         if (s.name == "WheelchairHorror")
         {
             //terrify wheelchair users
+            GameObject collectibles = GameObject.Find("Collectibles");
+            if(collectibles.transform.childCount < 1)
+            {
+                Invoke(nameof(LoadMainMenu),3);
+            }
         }
         if(s.name == "Climbing")
         {
