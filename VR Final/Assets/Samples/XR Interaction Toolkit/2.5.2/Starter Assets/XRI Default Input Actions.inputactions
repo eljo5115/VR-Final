@@ -443,15 +443,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "Velocity",
-                    "type": "Value",
-                    "id": "f13dd787-c89a-4007-9a3b-528c12633d6e",
-                    "expectedControlType": "Vector3",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -683,17 +674,6 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Grip Rotation",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4dbbf863-8889-4976-b228-8a1a5d5d778d",
-                    "path": "<OculusTouchController>{LeftHand}/devicePose/velocity",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Velocity",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -1259,15 +1239,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "Velocity",
-                    "type": "Value",
-                    "id": "2c5ff365-dd32-466f-8921-807333ae66d2",
-                    "expectedControlType": "Vector3",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -1499,17 +1470,6 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Grip Rotation",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c7bb59d6-ebd3-4f3f-92ac-a708220ab38d",
-                    "path": "<OculusTouchController>{RightHand}/devicePose/velocity",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Velocity",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
