@@ -1,15 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     //scenes loaded in order, load +1 on complete
     static GameManager instance;
     public static int collectibleCount;
+    List<InputDevice> inputDevices = new List<InputDevice>();
+    [SerializeField] private KeyCode escapeButton = KeyCode.Joystick1Button0;
     void Start()
     {
-        collectibleCount = 0;
+        InitializeInputReader();
+    }
+    void InitializeInputReader()
+    {
+        InputDevices.GetDevices(inputDevices);
+        InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.Controller, inputDevices);
+
     }
     void Awake()
     {
@@ -26,6 +35,10 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         StateManager();
+        if(Input.GetKeyDown(escapeButton))
+        {
+            LoadMainMenu();
+        }
     }
     void StateManager()
     {
@@ -43,6 +56,11 @@ public class GameManager : MonoBehaviour
         if (s.name == "WheelchairHorror")
         {
             //terrify wheelchair users
+            GameObject player = GameObject.Find("VR Wheelchair");
+            if(player.transform.position.y < -10 || player.transform.position.y > 100)
+            {
+                LoadMainMenu();
+            }
             GameObject collectibles = GameObject.Find("Collectibles");
             if(collectibles.transform.childCount < 1)
             {

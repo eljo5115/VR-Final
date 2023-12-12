@@ -21,6 +21,16 @@ EditorBuildSettings:
     path: Assets/Scenes/Climbing.unity
     guid: 187d3cc537f0b5140a8021e145b3cd34
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 22c487d417ef86942a902792fc72a3ba,
+      type: 2}
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000,
+      guid: 0995aa1be21110d448d51f4c796f81b2, type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 4eb42f6ec0ddba04cb1d74fef725c491,
+      type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
+      guid: a53766337c491254491078891cfcd3d1, type: 2}
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: a810f8313f0df4042abc6736d18870fb,
+      type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 7c3759b5ccada7243806989bbb02f74d,
       type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 6fd3b1d87da3ce34e97bf682e6c51d9a,

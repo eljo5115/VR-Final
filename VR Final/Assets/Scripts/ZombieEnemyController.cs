@@ -31,7 +31,7 @@ public class ZombieEnemyController : MonoBehaviour
 
     void Awake()
     {
-        player = GameObject.Find("VRWC_WheelchairRig/Camera Offset").transform;
+        player = GameObject.Find("VR Wheelchair/Camera Offset").transform;
         agent = GetComponent<NavMeshAgent>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
@@ -47,7 +47,7 @@ public class ZombieEnemyController : MonoBehaviour
     }
     private void Patrolling()
     {
-        agent.speed = 1;
+        agent.speed = 2;
         if(!walkPointSet) SearchWalkPoint();
         if(walkPointSet)
         {

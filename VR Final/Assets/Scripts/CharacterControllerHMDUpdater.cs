@@ -33,8 +33,8 @@ public class CharacterControllerHMDUpdater : MonoBehaviour
             return;
 
         var height = Mathf.Clamp(_xrRig.CameraInOriginSpaceHeight, _driver.minHeight, _driver.maxHeight);
-
         Vector3 center = _xrRig.CameraInOriginSpacePos;
+
         center.y = height/3f + _characterController.skinWidth;
 
         _characterController.height = height;
