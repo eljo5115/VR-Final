@@ -10,7 +10,7 @@ public class PickUp : MonoBehaviour
         if (other.collider.gameObject.CompareTag("Player"))
         {
             GameManager.collectibleCount++;
-            Destroy(gameObject);
+            Destroy(item);
         }
     }
     public void PickUpItem()
